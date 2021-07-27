@@ -1,0 +1,47 @@
+body {
+  font-family: "Press Start 2P", cursive !important;
+}
+.bg {
+  background-image: url(/img/1.jpg);
+  height: 620px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+img {
+  height: 70px;
+}
+.addBtn {
+  font-size: 1.5rem;
+  width: 100px;
+}
+
+.trashico {
+  font-size: 20px;
+}
+
+ul li.checked::after {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+ul li.checked {
+  color: #888;
+  text-decoration: line-through;
+}
+.deleteicon {
+  color: #811b14;
+  margin-left: 1em;
+  font-size: 1.5em;
+}
+ul li {
+  color: #fff;
+  list-style: none;
+}
+.check {
+  background-color: green;
+}
+.delete {
+  color: #fff;
+}
