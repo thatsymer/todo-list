@@ -26,11 +26,13 @@ function renderList(){
         for (let i=0; i<list.length; i++){
                 listItems += `
                     <li id="chk" class='nes-container is-dark'>
-                    ${list[i]}
-                    <span  onclick="check()" class="nes-text is-success float-end check">Check</span>
+                        <input id="toggle" type="checkbox">
+                        <label>${list[i]}</label>
                     </li>
                 `
+                
             }
+            
             localStorage.setItem("New Todo", JSON.stringify(list)); //transforming js object into a json string
             ulEl.innerHTML = listItems
             inputField.value = ''
@@ -39,9 +41,4 @@ function renderList(){
         list = []
         ulEl.innerHTML= "<li> </li>"
         localStorage.setItem("New Todo", JSON.stringify(list)); //set the item in localstorage
-    }
-
-    function check(){
-        document.getElementById('chk').style.textDecoration='line-through'
-        document.getElementById('chk').style.color='green'
     }

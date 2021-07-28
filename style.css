@@ -45,3 +45,8 @@ ul li {
 .delete {
   color: #fff;
 }
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: green;
+}
