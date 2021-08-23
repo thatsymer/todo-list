@@ -26,11 +26,11 @@ function renderList(){
         let listItems= ""  
         
         
-        for (let i=0; i<list.length; i++){
+        for (var i=0; i<list.length; i++){
                 listItems += `
                 <div class="card__item">
                     <div class="nes-container is-dark">
-                        <span class="position-absolute top-0 end-0 fs-4 text-danger" id="close-card-${i}"> <i class='bx bx-x'></i></span>
+                        <span class="position-absolute top-0 end-0 fs-4 text-danger" id="close-card" onclick="removeListItem()"> <i class='bx bx-x'></i></span>
                         <h6>${list[i]}</h6>
                     </div>
                 </div>
@@ -38,6 +38,7 @@ function renderList(){
                 
             }
             
+
             localStorage.setItem("New Todo", JSON.stringify(list)); //transforming js object into a json string
             card.innerHTML = listItems
             inputField.value = ''
@@ -46,7 +47,11 @@ function renderList(){
     function clearList(){
         list = []
         card.innerHTML= '<div class="cards" id="card"></div>'
-
         localStorage.setItem("New Todo", JSON.stringify(list)); //set the item in localstorage
     }
 
+    function removeListItem(){
+        const closeCard = document.getElementById("close-card");
+        closeCard.parentNode.remove()
+        
+    }
