@@ -1,13 +1,16 @@
 body {
   font-family: "Press Start 2P", cursive !important;
+  
 }
 .bg {
   background-image: url(/img/1.jpg);
-  height: 620px;
+  min-height: 620px;
+  max-height: auto;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  
 }
 img {
   height: 70px;
@@ -46,9 +49,10 @@ ul li {
   color: #fff;
 }
 
-input[type="checkbox"]:checked + label {
+input[type="checkbox"]:checked + span {
   text-decoration: line-through;
-  color: green;
+  color: rgb(22, 206, 52);
+  
 }
 .cards {
   display: flex;

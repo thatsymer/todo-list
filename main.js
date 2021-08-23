@@ -6,7 +6,7 @@ const todoList= document.getElementById("todo-list");
 list = [];
 //*************************EVENT LISTENERS*************************//
 addBtn.addEventListener('click', renderList);
-clearBtn.addEventListener('dblclick', clearList)
+clearBtn.addEventListener('dblclick', clearList);
 
 //*************************FUNCTIONS*************************//\
 function renderList(){
@@ -28,16 +28,19 @@ function renderList(){
         
         for (let i=0; i<list.length; i++){
                 listItems += `
-                <div class="card__item">
+                <div class="card__item" >
                     <div class="nes-container is-dark">
+                   
                         <span class="position-absolute top-0 end-0 fs-4 text-danger" id="close-card" onclick="removeListItem()"> <i class='bx bx-x'></i></span>
-                        <h6>${list[i]}</h6>
+                        <label>
+                            <input type="checkbox" class="nes-checkbox is-dark"/>
+                            <span>${list[i]}</span>
+                            </label>
                     </div>
                 </div>
                 `
                 
             }
-            
 
             localStorage.setItem("New Todo", JSON.stringify(list)); //transforming js object into a json string
             card.innerHTML = listItems
@@ -58,7 +61,6 @@ function renderList(){
             itemsArray.splice(i, 1);
             localStorage.setItem('New Todo', JSON.stringify(itemsArray));
           }
-
         }
         
     
