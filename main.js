@@ -26,7 +26,7 @@ function renderList(){
         let listItems= ""  
         
         
-        for (var i=0; i<list.length; i++){
+        for (let i=0; i<list.length; i++){
                 listItems += `
                 <div class="card__item">
                     <div class="nes-container is-dark">
@@ -53,5 +53,12 @@ function renderList(){
     function removeListItem(){
         const closeCard = document.getElementById("close-card");
         closeCard.parentNode.remove()
+        let itemsArray = JSON.parse(localStorage.getItem("New Todo"))
+        for(let i = 0; i < itemsArray.length; i++){
+            itemsArray.splice(i, 1);
+            localStorage.setItem('New Todo', JSON.stringify(itemsArray));
+          }
+
+        }
         
-    }
+    
